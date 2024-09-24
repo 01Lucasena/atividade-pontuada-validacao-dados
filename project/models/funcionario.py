@@ -14,3 +14,12 @@ class Funcionario(Pessoa_fisica,ABC):
         self.matricula = matricula
         self.setor = setor
         self.salario = salario
+
+    def __str__(self) -> str:
+        return (
+            f"\nCPF: {self.cpf}"
+            f"\nRG: {self.rg}"
+            f"\nMatrícula: {self.matricula}"
+            f"\nSetor: {self.setor.value}"
+            f"\nSalário: {self.salario}"
+        )

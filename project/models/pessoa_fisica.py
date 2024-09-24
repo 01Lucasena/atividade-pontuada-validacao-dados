@@ -12,3 +12,10 @@ class Pessoa_fisica(ABC,Pessoa):
         self.genero = genero
         self.estado_civil = estado_civil
         self.data_de_nascimento = data_de_nascimento
+
+    def __str__(self) -> str:
+        return (
+            f"\nGênero: {self.genero.value}"
+            f"\nEstado Cívil: {self.estado_civil.value}"
+            f"\nData de Nascimento: {self.data_de_nascimento}"
+        )

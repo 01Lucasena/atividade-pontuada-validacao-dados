@@ -8,3 +8,9 @@ class Pessoa_juridica(Pessoa,ABC):
     
         self.cnpj = cnpj
         self.inscricao_estadual = inscricao_estadual
+    
+    def __str__(self) -> str:
+        return (
+            f"\nCNPJ: {self.cnpj}"
+            f"\nInscrição estadual: {self.inscricao_estadual}"
+        )
