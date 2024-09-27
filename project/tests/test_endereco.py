@@ -48,7 +48,7 @@ def test_endereco_cidade_vazio_retorna_mensagem(endereco_valido):
 
 def test_endereco_cidade_caracteres_retorna_menssagem(endereco_valido):
     with pytest.raises(TypeError,match="Caracteres inválidos foram inseridos."):
-        Endereco("Rua A","01","Apt 02","0000","123", Unidade_federativa.BAHIA)
+        Endereco("Rua A","01","Apt 02","0000","1111", Unidade_federativa.BAHIA)
 
 def test_endereco_unidade_federativa_valida(endereco_valido):
     assert endereco_valido.unidade_federativa == Unidade_federativa.BAHIA
