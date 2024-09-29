@@ -10,7 +10,26 @@ class Medico(Funcionario):
 
         self.crm = crm
     
+    def _verificar_id(self, id):
+        return super()._verificar_id(id)
+    
+    def _verificar_nome(self, nome):
+        return super()._verificar_nome(nome)
+    
+    def _verificar_cep(self, cep):
+        return super()._verificar_cep(cep)
+    
+    def _verificar_rg(self, rg):
+        return super()._verificar_rg(rg)
+    
+    def _verificar_cpf(self, cpf):
+        return super()._verificar_cpf(cpf)
+    
+    def _verificar_salario(self, salario):
+        return super()._verificar_salario(salario)
+    
     def __str__(self) -> str:
         return (
+            f"{super().__str__()}"
             f"\nCRM: {self.crm}"
         )

@@ -15,6 +15,7 @@ class Pessoa_fisica(ABC,Pessoa):
 
     def __str__(self) -> str:
         return (
+            f"{super().__str__()}"
             f"\nGênero: {self.genero.value}"
             f"\nEstado Cívil: {self.estado_civil.value}"
             f"\nData de Nascimento: {self.data_de_nascimento}"

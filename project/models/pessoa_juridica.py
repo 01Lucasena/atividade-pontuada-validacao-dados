@@ -11,6 +11,7 @@ class Pessoa_juridica(Pessoa,ABC):
     
     def __str__(self) -> str:
         return (
+            f"{super().__str__()}"
             f"\nCNPJ: {self.cnpj}"
             f"\nInscrição estadual: {self.inscricao_estadual}"
         )

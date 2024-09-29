@@ -5,3 +5,6 @@ class Setor(Enum):
     SAUDE = "Saúde"
     JURIDICO = "Jurídico"
     OPERACOES = "Operações"
+
+   
+        

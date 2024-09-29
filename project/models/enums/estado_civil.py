@@ -6,3 +6,5 @@ class Estado_civil(Enum):
     SEPARADO = "Separado"
     DIVORCIADO = "Divorciado"
     VIUVO = "Viúvo"
+
+    

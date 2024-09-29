@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 from project.models.endereco import Endereco
 
 class Pessoa(ABC):
@@ -10,7 +10,23 @@ class Pessoa(ABC):
         self.telefone = telefone
         self.email = email
         self.endereco = endereco
-      
+    
+    '''
+    def _verificar_id(self, id):
+        if not isinstance(id, int):
+            raise TypeError("Dados inválidos foram inseridos.")
+        if id < 0:
+            raise ValueError("Dados inválidos foram inseridos.")
+        return id
+    
+    def _verificar_nome(self, nome):
+        if not isinstance(nome, str) or not nome.strip():
+            raise ValueError("Nome não deve estar vazio.")
+        return nome
+
+    def _verificar_cep(self, cep):
+        return super._verificar_cep(cep) 
+    '''     
 
     def __str__(self) -> str:
         return (
