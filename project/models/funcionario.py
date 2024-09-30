@@ -30,37 +30,4 @@ class Funcionario(Pessoa_fisica,ABC):
             f"\nSetor: {self.setor.value}"
             f"\nSalário: {self.salario}"
             )
-    
-    def _verificar_salario(self, salario):
-        
-        if not isinstance (salario, float):
-            raise TypeError("Dados inválidos foram inseridos.")
-        
-        if salario < 0:
-            raise ValueError("Salário não pode ser negativo.")
-        return salario
-    
-    def _verificar_cpf(self, cpf):
-        if len(cpf) > 14:
-            raise CpfError("CPF inválido.")
-        return cpf
-    
-    def _verificar_rg(self, rg):
-        if len(rg) > 12:
-            raise RgError("RG inválido.")
-        return rg
 
-    def _verificar_id(self, id):
-        return super()._verificar_id(id)
-    
-    def _verificar_nome(self, nome):
-        return super()._verificar_nome(nome)
-
-    def __str__(self) -> str:
-        return (
-            f"\nCPF: {self.cpf}"
-            f"\nRG: {self.rg}"
-            f"\nMatrícula: {self.matricula}"
-            f"\nSetor: {self.setor.value}"
-            f"\nSalário: {self.salario}"
-        )

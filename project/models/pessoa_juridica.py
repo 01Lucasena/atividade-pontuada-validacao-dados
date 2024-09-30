@@ -1,4 +1,4 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 from project.models.endereco import Endereco
 from project.models.pessoa import Pessoa
 
