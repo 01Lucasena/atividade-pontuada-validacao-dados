@@ -10,6 +10,6 @@ class Fornecedor(Pessoa_juridica):
     
     def __str__(self) -> str:
         return (
-            f"{super().__str__()}"
+            (super().__str__()) +
             f"\nProduto: {self.produto}"
         )

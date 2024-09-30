@@ -1,9 +1,9 @@
-from abc import ABC,abstractmethod
+from abc import ABC
 from project.models.endereco import Endereco
 
 class Pessoa(ABC):
-    def __init__(self,id: int, nome: str, telefone: str , email: str, endereco: Endereco) -> None:
-        super().__init__()
+    def __init__(self, id: int, nome: str, telefone: str , email: str, endereco: Endereco) -> None:
+
         
         self.id = id
         self.nome = nome

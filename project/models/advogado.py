@@ -12,6 +12,6 @@ class Advogado(Funcionario):
 
     def __str__(self) -> str:
         return (
-            f"{super().__str__()}"
+            (super().__str__()) +
             f"\nOAB: {self.oab}"
         )

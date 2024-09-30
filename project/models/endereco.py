@@ -11,7 +11,6 @@ class Endereco:
         self.cidade = cidade
         self.unidade_federativa = unidade_federativa
 
-      
 
     def __str__(self) -> str:
         return (
@@ -20,5 +19,5 @@ class Endereco:
             f"\nComplemento: {self.complemento}"
             f"\nCEP: {self.cep}"
             f"\nCidade: {self.cidade}"
-            f"\nUnidade Federativa: {self.unidade_federativa.value}"
+            f"\nUnidade Federativa: {self.unidade_federativa.texto}"
         )

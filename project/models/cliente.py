@@ -11,6 +11,6 @@ class Cliente(Pessoa_fisica):
 
     def __str__(self) -> str:
         return (
-            f"{super().__str__()}"
+            (super().__str__()) +
             f"\nProtocolo do atendimento: {self.protocolo_atendimento}"
         )

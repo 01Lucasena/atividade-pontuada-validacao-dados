@@ -1,5 +1,4 @@
 import pytest
-
 from project.models.advogado import Advogado
 from project.models.endereco import Endereco
 from project.models.enums.setor import Setor
@@ -10,10 +9,11 @@ from project.models.enums.unidade_federativa import Unidade_federativa
 
 @pytest.fixture
 def advogado_valido():
-    return Advogado("00000000","00.000.000-0","000.000.000-00","000",Setor.JURIDICO,9000,Genero.MASCULINO,Estado_civil.DIVORCIADO,
+    advogado1 = Advogado("00000000","00.000.000-0","000.000.000-00","000",Setor.JURIDICO,9000,Genero.MASCULINO,Estado_civil.DIVORCIADO,
                     "18/10/1999","Lucas Sena","0000-0000","lucas@email.com",
-                    Endereco("Rua A","001","Apt 002","Salvador",Unidade_federativa.BAHIA)
+                    Endereco("Rua A","001","Apt 002","0000000","Salvador",Unidade_federativa.BAHIA)
                     )
+    return advogado1
 
 def test_advogado_oab_valido(advogado_valido):
     assert advogado_valido.oab == "00000000"
@@ -62,6 +62,9 @@ def test_advogado_endereco_complemento_valido(advogado_valido):
 
 def test_advogado_endereco_cidade_valido(advogado_valido):
     assert advogado_valido.endereco.cidade == "Salvador"
+
+def test_advogado_endereco_cep_valido(advogado_valido):
+    assert advogado_valido.endereco.cep == "40323-900"
 
 def test_advogado_endereco_unidade_federativa_valido(advogado_valido):
     assert advogado_valido.endereco.unidade_federativa == Unidade_federativa.BAHIA
