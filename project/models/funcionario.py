@@ -27,3 +27,26 @@ class Funcionario(Pessoa_fisica,ABC):
             f"\nSalário: {self.salario}"
             )
 
+    def _verificar_cpf(self, cpf):
+        self._verificar_cpf_tamanho(cpf)
+        self.cpf = cpf
+        return self.cpf
+
+    def _verificar_rg(self, rg):
+        self._verificar_rg_tamanho(rg)
+        self.rg = rg
+        return self.rg
+    
+    def _verificar_cpf_tamanho(cpf):
+        if len(cpf) > 11:
+            raise ValueError("CPF deve ter pelo menos 11 dígitos")
+    
+    def _verificar_rg_tamanho(rg):
+        if len(rg) > 10:
+            raise ValueError("RG deve ter pelo menos 10 dígitos")
+        
+    def _verificar_id(self, id):
+        return super()._verificar_id(id)
+    
+    def _verificar_nome(self, nome):
+        return super()._verificar_nome(nome)

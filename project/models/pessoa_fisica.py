@@ -1,4 +1,4 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 from project.models.endereco import Endereco
 from project.models.enums.genero import Genero
 from project.models.enums.estado_civil import Estado_civil

@@ -14,3 +14,12 @@ class prestacao_servico(Pessoa_juridica):
             f"\ninício do contrato: {self.contrato_inicio}"
             f"\nFim do contrato: {self.contrato_fim}"
         )
+
+    def _verificar_id(self, id):
+        return super()._verificar_id(id)
+    
+    def _verificar_nome(self, nome):
+        return super()._verificar_nome(nome)
+    
+    def _verificar_cep(self, cep):
+        return super()._verificar_cep(cep)
