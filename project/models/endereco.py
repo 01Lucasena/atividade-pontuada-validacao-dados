@@ -7,7 +7,7 @@ class Endereco:
         self.logradouro = logradouro
         self.numero = numero
         self.complemento = complemento
-        self.cep = self._verificar_cep(cep)
+        self.cep = cep
         self.cidade = cidade
         self.unidade_federativa = unidade_federativa
 
@@ -19,16 +19,7 @@ class Endereco:
             f"\nComplemento: {self.complemento}"
             f"\nCEP: {self.cep}"
             f"\nCidade: {self.cidade}"
-            f"\nUnidade Federativa: {self.unidade_federativa.texto}"
+            f"\nUnidade Federativa: {self.unidade_federativa.texto} - {self.unidade_federativa.sigla}"
         )
-    
-    def _verificar_cep(self,cep):
-        
-        self._verificar_cep_tamanho(cep)
-        self.cep = cep
-        return self.cep
-    
-    def _verificar_cep_tamanho(cep):
 
-        if len(cep) > 8:
-            raise ValueError("Cep deve ter no mínimo 8 dígitos.")
+   

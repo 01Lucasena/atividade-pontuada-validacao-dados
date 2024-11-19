@@ -11,8 +11,8 @@ class Funcionario(Pessoa_fisica,ABC):
                  data_de_nascimento: str, nome: str, telefone: str, email: str, endereco: Endereco) -> None:
         super().__init__(genero, estado_civil, data_de_nascimento, nome, telefone, email, endereco)
 
-        self.cpf = cpf
-        self.rg = rg
+        self.cpf = self._verificar_cpf(cpf)
+        self.rg = self._verificar_rg(rg)
         self.matricula = matricula
         self.setor = setor
         self.salario = self._verificar_salario(salario)
@@ -37,6 +37,11 @@ class Funcionario(Pessoa_fisica,ABC):
         self.rg = rg
         return self.rg
     
+    def _verificar_salario(self, salario):
+        self._verificar_salario_invalido(salario)
+        self.salario = salario
+        return self.salario
+    
     def _verificar_cpf_tamanho(cpf):
         if len(cpf) > 11:
             raise ValueError("CPF deve ter pelo menos 11 dígitos")
@@ -44,9 +49,15 @@ class Funcionario(Pessoa_fisica,ABC):
     def _verificar_rg_tamanho(rg):
         if len(rg) > 10:
             raise ValueError("RG deve ter pelo menos 10 dígitos")
-        
+    
+    def _verificar_salario_invalido(self, salario):
+        if  not isinstance(salario, float):
+            raise TypeError("Salário inválido.") 
+    
     def _verificar_id(self, id):
         return super()._verificar_id(id)
     
     def _verificar_nome(self, nome):
         return super()._verificar_nome(nome)
+    
+    

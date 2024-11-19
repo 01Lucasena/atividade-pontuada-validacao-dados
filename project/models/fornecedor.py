@@ -14,11 +14,8 @@ class Fornecedor(Pessoa_juridica):
             f"\nProduto: {self.produto}"
         )
     
-    def _verificar_id(self, id):
+    def _verificar_id(self, id: int) -> int:
         return super()._verificar_id(id)
-    
-    def _verificar_nome(self, nome):
+
+    def _verificar_nome(self, nome: str) -> str:
         return super()._verificar_nome(nome)
-    
-    def _verificar_cep(self, cep):
-        return super()._verificar_cep(cep)

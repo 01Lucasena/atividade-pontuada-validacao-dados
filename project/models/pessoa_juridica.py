@@ -15,3 +15,9 @@ class Pessoa_juridica(Pessoa,ABC):
             f"\nCNPJ: {self.cnpj}"
             f"\nInscrição estadual: {self.inscricao_estadual}"
         )
+    
+    def _verificar_id(self, id) -> int:
+        return super()._verificar_id(id)
+
+    def _verificar_nome(self, nome) -> str:
+        return super()._verificar_nome(nome)

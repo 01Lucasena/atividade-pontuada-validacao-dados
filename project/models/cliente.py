@@ -14,3 +14,23 @@ class Cliente(Pessoa_fisica):
             (super().__str__()) +
             f"\nProtocolo do atendimento: {self.protocolo_atendimento}"
         )
+    
+    def _verificar_id(self, id: int) -> int:
+        return super()._verificar_id(id)
+
+    def _verificar_protocolo_atendimento(self, protocolo_atendimento) -> int:
+        
+        self._verificar_protocolo_atendimento_invalido(protocolo_atendimento)
+        self.protocolo_atendimento = protocolo_atendimento
+
+        return self.protocolo_atendimento
+        
+       
+    
+    def _verificar_nome(self, nome: str) -> str:
+        return super()._verificar_nome(nome)
+    
+    def _verificar_protocolo_atendimento_invalido(self, protocolo_atendimento):
+        
+        if not isinstance(protocolo_atendimento,int):
+            raise TypeError("Protocolo de atendimento inválido.")
